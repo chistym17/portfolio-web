@@ -26,14 +26,14 @@ app.post('/sendemail', async (req, res) => {
         port: 465,
         secure: true,
         auth: {
-         user: process.env.db_email,
-         pass: process.env.db_pass,
+         user: "mchisty31@gmail.com",
+         pass: "txbw ewgo dwaw rqnd",
         },
        });
      
     const mailOptions = {
         from: `${name} <${email}>`,
-        to: process.env.db_email,  // Replace with your email address
+        to: "mchisty31@gmail.com",  // Replace with your email address
         subject,
         text: message,
     };
