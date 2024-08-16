@@ -21,15 +21,16 @@ app.post('/sendemail', async (req, res) => {
     const { name, email, subject, message } = req.body;
 
     const transporter = nodemailer.createTransport({
-        // Configure your email service provider here
-        // Example for using a Gmail account:
         service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
         auth: {
-            user: process.env.db_email,
-            pass: process.env.db_pass,
+         user: process.env.db_email,
+         pass: process.env.db_pass,
         },
-    });
-
+       });
+     
     const mailOptions = {
         from: `${name} <${email}>`,
         to: process.env.db_email,  // Replace with your email address
@@ -49,3 +50,5 @@ app.post('/sendemail', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
