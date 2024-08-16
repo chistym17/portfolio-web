@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app.use(cors({
-origin:'https://my-portfolio-b9aa1.web.app'
+origin:'*'
 
 }));
 
